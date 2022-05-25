@@ -1,5 +1,9 @@
 # tipdetect
 
+## Git インストール
+
+[ここらへん](https://note.com/cd_ss_829/n/n4e7d80723381)を参考にGitをインストールする。
+
 ## Githubへの接続設定
 
 [参考](https://qiita.com/shizuma/items/2b2f873a0034839e47ce)
@@ -69,3 +73,84 @@ Host github github.com
 を作成しましょう。
 これで、もう一度接続をやってみるとうまくいくはずです。
 以下のようにコマンドを打って確かめて見ましょう。
+
+
+
+## 作業の最初
+
+- コードのクローン
+
+```
+git clone https://github.com/dinov2021pub/tipdetect.git
+
+```
+
+- ローカルでブランチを切る（最初だけ）
+
+```
+git checkout -b feature/code-rev
+```
+
+- ローカルで仮想環境を作る
+
+```
+python venv -m tipdetect
+
+```
+
+- 仮想環境に入る
+
+```
+cd tipdetect
+source ./bin/activate
+```
+
+- 必要なパッケージのインストール
+
+```
+pip install -r requirements.txt
+```
+
+#####################
+- コードの更新
+#####################
+
+
+- リモートリポジトリへpush
+
+```
+git add <変更したファイル>
+git commit -m "code rev"
+git push origin feature/code-rev
+```
+
+## 次回、作業時
+
+- 仮想環境に入る
+
+```
+cd tipdetect
+source ./bin/activate
+```
+
+- ローカルのコードの変更の更新
+
+```
+git checkout main
+git branch -d feature/code-rev
+git pull origin main
+git checkout -d feature/code-rev
+```
+
+#####################
+- コードの更新
+#####################
+
+
+- リモートリポジトリへpush
+
+```
+git add <変更したファイル>
+git commit -m "code rev"
+git push origin feature/code-rev
+```
