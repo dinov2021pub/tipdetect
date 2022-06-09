@@ -154,3 +154,5 @@ git add <変更したファイル>
 git commit -m "code rev"
 git push origin feature/code-rev
 ```
+
+不明点は遠慮なく聞いてください。
