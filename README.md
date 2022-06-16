@@ -5,8 +5,10 @@
 [ここらへん](https://note.com/cd_ss_829/n/n4e7d80723381)を参考にGitをインストールする。
 
 ## Githubへの接続設定
-
+以下あたりも参考になります。
 [参考](https://qiita.com/shizuma/items/2b2f873a0034839e47ce)
+[GitHubで複数アカウントを使い分ける方法](https://www.wakuwakubank.com/posts/380-git-multiple-account/)
+[複数のGitHubアカウントを使い分けたい時の設定方法とTips](https://zenn.dev/taichifukumoto/articles/how-to-use-multiple-github-accounts)
 
 ### 公開鍵・秘密鍵を作成する
 
