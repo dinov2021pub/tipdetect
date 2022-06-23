@@ -158,3 +158,8 @@ git push origin feature/code-rev
 ```
 
 不明点は遠慮なく聞いてください。
+
+## 途中までの結果は、こちらに保存されている。　（2022年6月23日）
+https://drive.google.com/drive/u/0/folders/1WcOykUBFo1ooh83qFKuc0nNUhwTcQEu_
+
+
