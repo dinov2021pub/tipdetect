@@ -162,6 +162,7 @@ $ ssh -T github-sub
 Hi [サブアカウントのユーザー名]! You've successfully authenticated, but GitHub does not provide shell access.
 ```
 
+
 3. アカウントを切り替える
 ```
 $ git config --global user.name "[GitHubアカウント名]"
