@@ -76,7 +76,7 @@ Host github github.com
 これで、もう一度接続をやってみるとうまくいくはずです。
 以下のようにコマンドを打って確かめて見ましょう。
 
-
+Try again
 
 ## 作業の最初
 
@@ -125,6 +125,81 @@ git add <変更したファイル>
 git commit -m "code rev"
 git push origin feature/code-rev
 ```
+
+### うまくいかないとき
+以下を順番に見ていきましょう。
+
+1．configファイルある？ 2つのアカウントがあるとして
+```
+
+#メインアカウント
+Host github #任意のホスト名
+  HostName github.com
+  IdentityFile ~/.ssh/id_rsa #メインアカウントの鍵のファイル
+  User git
+  Port 22
+  TCPKeepAlive yes
+  IdentitiesOnly yes
+
+#サブアカウント
+Host github-sub #任意のホスト名
+  HostName github.com
+  IdentityFile ~/.ssh/id_sub_rsa #サブアカウントの鍵のファイル
+  User git
+  Port 22
+  TCPKeepAlive yes
+  IdentitiesOnly yes
+
+```
+
+2．接続を確認する。
+```
+$ ssh -T github-sub
+```
+と打つと
+```
+$ ssh -T github-sub
+Hi [サブアカウントのユーザー名]! You've successfully authenticated, but GitHub does not provide shell access.
+```
+
+
+3. アカウントを切り替える
+```
+$ git config --global user.name "[GitHubアカウント名]"
+$ git config --global user.email "[GitHubのメールアドレス]"
+
+```
+アカウントが切り替わっているかどうかは
+```
+git config user.name
+git config user.email
+```
+で確認することができます。
+
+`~/.bashrc` に以下を書いておいても良い
+```
+function gitmain() {
+  git config --global user.name "[メインのGitHubアカウント名]"
+  git config --global user.email "[メインのGitHubのメールアドレス]"
+}
+
+function gitsub() {
+  git config --global user.name "[メインのGitHubアカウント名]"
+  git config --global user.email "[メインのGitHubのメールアドレス]"
+}
+```
+コマンドラインから
+```
+$ gitmain
+```
+とか打つと切り替えられる。
+
+3. もういっかい、Closeしてみる
+```
+$ gitsub  # <- ~/.bashrc に書いてある関数
+$ git clone git@github-sub:dinov2021pub/qrcode-api.git
+```
+変更、add, commit, push してみる。
 
 ## 次回、作業時
 
