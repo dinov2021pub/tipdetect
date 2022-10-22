@@ -238,3 +238,6 @@ git push origin feature/code-rev
 [https://drive.google.com/drive/u/0/folders/1WcOykUBFo1ooh83qFKuc0nNUhwTcQEu_
 ](https://drive.google.com/drive/u/0/folders/1WcOykUBFo1ooh83qFKuc0nNUhwTcQEu_)
 
+
+### 改訂履歴
+- 2022/10/22 修正　出島
